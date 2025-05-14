@@ -45,7 +45,7 @@ expenses/ ├── expenses/ # Main Django project folder │
 
 1. **Clone the Repository**:
    ```bash
-     git clone https://github.com/your-repo/expenses.git
+     git clone https://github.com/asfaquz/expenses.git
      cd expenses
 
 2. Create a Virtual Environment:
