@@ -16,7 +16,17 @@ This project is a Django-based **Expenses Management System** that integrates wi
 
 ## Project Structure
 
-expenses/ ├── expenses/ # Main Django project folder │ ├── init.py # Project initialization │ ├── settings.py # Django settings │ ├── urls.py # URL routing │ ├── celery.py # Celery configuration ├── user/ # User app │ ├── models.py # User model │ ├── tasks.py # Celery tasks (Kafka consumer) │ ├── signals.py # Signal handlers (Kafka producer) │ ├── views.py # Views for user management ├── manage.py # Django management script
+expenses/ ├── expenses/ # Main Django project folder │ 
+├── init.py # Project initialization │ 
+├── settings.py # Django settings │ 
+├── urls.py # URL routing │ 
+├── celery.py # Celery configuration 
+├── user/ # User app │ 
+├── models.py # User model │
+├── tasks.py # Celery tasks (Kafka consumer) │ 
+├── signals.py # Signal handlers (Kafka producer) │ 
+├── views.py # Views for user management 
+├── manage.py # Django management script
 
 ---
 
@@ -35,8 +45,8 @@ expenses/ ├── expenses/ # Main Django project folder │ ├── init.py
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-repo/expenses.git
-   cd expenses
+     git clone https://github.com/your-repo/expenses.git
+     cd expenses
 
 2. Create a Virtual Environment:
     python3 -m venv venv
