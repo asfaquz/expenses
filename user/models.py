@@ -1,4 +1,5 @@
 from django.db import models
+from rest_framework import serializers
 
 class User(models.Model):
     """
@@ -34,15 +35,11 @@ class UserAccount(models.Model):
     User account model to store user account information.
     """
     id = models.AutoField(primary_key=True)
-    username = models.CharField(max_length=150, unique=True)
-    password = models.CharField(max_length=128)
-    token = models.CharField(max_length=255, blank=True)
-    token_expiry = models.DateTimeField(null=True, blank=True)
-    status = models.CharField(max_length=20, choices=[('active', 'Active'), ('inactive', 'Inactive')], default='active')
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='accounts')
+    status = models.CharField(max_length=20, choices=[('active', 'Active'), ('inactive', 'Inactive')], default='inactive')
+    user= models.ForeignKey(User, on_delete=models.CASCADE, related_name='accounts')
+    token_generated = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
 
 
     class Meta:
@@ -57,5 +54,5 @@ class UserAccount(models.Model):
    
         
     def __str__(self):
-        return f"{self.username} - {self.user.email}"
+        return f"{self.user.first_name} - {self.user.email}"
 

@@ -40,11 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt',
     #'rest_framework.authtoken',  # Optional for token auth
-
     # Custom apps
     'expenses',
-   
     'tracker',
 ]
 
@@ -157,3 +156,12 @@ KAFKA_CONFIG = {
 # Celery settings
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+
+# Flower settings
+# Flower is a web-based tool for monitoring and administrating Celery clusters.
+# It provides a real-time web interface to monitor task progress and history.
+# You can start Flower with the command: `celery -A your_project flower`
+FLOWER_BASIC_AUTH = ['admin:password']  # Basic auth credentials
+FLOWER_PORT = 5555
+FLOWER_URL_PREFIX = 'flower'  # if you want to serve under a path
